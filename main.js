@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         redInput.value = r;
         greenInput.value = g;
         blueInput.value = b;
-    }
+    }   
 
     function updateSliders() {
         let r = validateInput(redInput.value);

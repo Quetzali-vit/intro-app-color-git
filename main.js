@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Selección de elementos del DOM
     const red = document.getElementById("red");
     const green = document.getElementById("green");
     const blue = document.getElementById("blue");
@@ -12,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const colorPicker = document.getElementById("colorPicker");
     const copyBtn = document.getElementById("copyBtn");
 
+    // Función para actualizar el color desde los sliders
     function updateColor() {
         let r = red.value;
         let g = green.value;
@@ -27,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
         blueInput.value = b;
     }   
 
+    // Función para actualizar sliders desde los inputs numéricos
     function updateSliders() {
         let r = validateInput(redInput.value);
         let g = validateInput(greenInput.value);
@@ -42,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
         blue.value = b;
     }
 
+    // Función para actualizar los valores desde el selector de color
     function updateFromColorPicker() {
         let hex = colorPicker.value;
         let rgb = hexToRgb(hex);
@@ -58,10 +62,12 @@ document.addEventListener("DOMContentLoaded", function () {
         hexCode.textContent = hex.toUpperCase();
     }
 
+    // Conversión de valores RGB a HEX
     function rgbToHex(r, g, b) {
         return `#${((1 << 24) + (r << 16) + (g << 8) + +b).toString(16).slice(1).toUpperCase()}`;
     }
 
+    // Conversión de valores HEX a RGB
     function hexToRgb(hex) {
         let bigint = parseInt(hex.slice(1), 16);
         return {
@@ -71,28 +77,35 @@ document.addEventListener("DOMContentLoaded", function () {
         };
     }
 
+    // Validación de entrada de números dentro del rango 0-255
     function validateInput(value) {
         let num = parseInt(value);
         return isNaN(num) ? 0 : Math.min(255, Math.max(0, num));
     }
 
+    // Copiar código hexadecimal al portapapeles
     function copyToClipboard() {
         navigator.clipboard.writeText(hexCode.textContent)
             .then(() => alert("Código HEX copiado al portapapeles"))
             .catch(err => console.error("Error al copiar: ", err));
     }
 
+    // Eventos de los sliders
     red.addEventListener("input", updateColor);
     green.addEventListener("input", updateColor);
     blue.addEventListener("input", updateColor);
 
+    // Eventos de los inputs numéricos
     redInput.addEventListener("input", updateSliders);
     greenInput.addEventListener("input", updateSliders);
     blueInput.addEventListener("input", updateSliders);
 
+    // Evento del selector de color
     colorPicker.addEventListener("input", updateFromColorPicker);
+    
+    // Evento del botón copiar
     copyBtn.addEventListener("click", copyToClipboard);
 
+    // Inicializa el color al cargar la página
     updateColor();
 });
-

@@ -1,44 +1,52 @@
+/* Estilos generales para el cuerpo de la página */
 body {
-    background-color: #e0e0e0c1;
-    font-family: 'Arial', sans-serif;
-}  
+    background-color: #e0e0e0c1; /* Establece un color de fondo gris claro con opacidad */
+    font-family: 'Arial', sans-serif; /* Define la tipografía principal como Arial */
+}
 
+/* Estilos para los contenedores de tarjetas */
 .card {
-    border-radius: 10px;
-    overflow: hidden;
-    background: rgb(255, 255, 255);
+    border-radius: 10px; /* Bordes redondeados con radio de 10px */
+    overflow: hidden; /* Evita que los elementos internos se desborden fuera de los bordes redondeados */
+    background: rgb(255, 255, 255); /* Fondo blanco */
 }
 
+/* Estilos para los cuadros de color dentro de las tarjetas */
 .color-box {
-    width: 100%;
-    height: 180px;
-    background-color: #000;
-    transition: background-color 0.3s ease-in-out;
+    width: 100%; /* Ancho completo del contenedor */
+    height: 180px; /* Altura fija de 180px */
+    background-color: #000; /* Fondo inicial negro */
+    transition: background-color 0.3s ease-in-out; /* Transición suave para el cambio de color de fondo */
 }
 
+/* Estilos para los controles de selección de color */
 .form-control-color {
-    width: 80px;
-    height: 40px;
-    border: none;
-    background: none;
-    cursor: pointer;
-    margin-top: 10px;
+    width: 80px; /* Ancho del control de color */
+    height: 40px; /* Altura del control de color */
+    border: none; /* Sin borde */
+    background: none; /* Sin fondo */
+    cursor: pointer; /* Cambia el cursor a puntero al pasar sobre el control */
+    margin-top: 10px; /* Espaciado superior de 10px */
 }
 
+/* Estilos para el borde del control de color en navegadores Webkit (como Chrome y Safari) */
 .form-control-color::-webkit-color-swatch {
-    border-radius: 5px;
-    border: 2px solid #ccc;
+    border-radius: 5px; /* Bordes redondeados en la muestra de color */
+    border: 2px solid #ccc; /* Borde gris claro alrededor de la muestra de color */
 }
 
+/* Estilos para el control deslizante personalizado */
 .custom-range {
-    transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out; /* Transición suave para todas las propiedades */
 }
 
+/* Efecto al pasar el cursor sobre el control deslizante */
 .custom-range:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño del control deslizante al pasar el cursor sobre él */
 }
 
+/* Estilos para los botones con borde oscuro */
 .btn-outline-dark {
-    font-size: 0.8rem;
-    padding: 5px 10px;
+    font-size: 0.8rem; /* Tamaño de fuente reducido */
+    padding: 5px 10px; /* Espaciado interno de 5px en la parte superior e inferior y 10px en los lados */
 }
